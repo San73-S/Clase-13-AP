@@ -46,7 +46,7 @@ public class EmpleadoDAO extends DAO{
         }
     }
 
-    public Empleado findEmpleadoDNI(int dni) throws Exception{
+    public Empleado findEmployeeDNI(int dni) throws Exception{
         try {
             String sql = "SELECT * FROM Empleado WHERE dni = '" + dni + "';";
             queryDataBase(sql);
@@ -68,7 +68,7 @@ public class EmpleadoDAO extends DAO{
         }
     }
 
-    public Collection<Empleado> listEmpleado() throws Exception{
+    public Collection<Empleado> listEmployee() throws Exception{
         try {
             String sql = "SELECT dni, nombre, apellido, nacionalidad, departamento FROM Empleado;";
             queryDataBase(sql);
