@@ -93,4 +93,27 @@ public class EmpleadoDAO extends DAO{
         }
     }
 
+    public Collection<Empleado> listEmployeeLogistics() throws Exception{
+        try {
+            String sql = "SELECT e.nombre, e.apellido FROM Empleado e, Departamento d" +
+                    " WHERE e.departamento = d.id AND e.departamento = 1;";
+            queryDataBase(sql);
+
+            Collection<Entidades.Empleado> listaEmpleados = new ArrayList<>();
+            Entidades.Empleado empleado = null;
+
+            while (resultSet.next()){
+                empleado = new Entidades.Empleado();
+                empleado.setNombre(resultSet.getString(1));
+                empleado.setApellido(resultSet.getString(2));
+                listaEmpleados.add(empleado);
+            }
+            disconnectDataBase();
+            return listaEmpleados;
+        } catch (Exception e){
+            disconnectDataBase();
+            throw e;
+        }
+    }
+
 }
