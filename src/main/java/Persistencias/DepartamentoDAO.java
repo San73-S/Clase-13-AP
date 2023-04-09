@@ -14,8 +14,8 @@ public class DepartamentoDAO extends DAO{
             }
 
             String sql = "INSERT INTO Departamento(nombre_departamento, presupuesto)" +
-                    departamento.getNombre_departamento() + "' , '" +
-                    departamento.getPresupuesto() + "');";
+                    "VALUES ( '" +  departamento.getNombre_departamento() + "' , '" +
+                                    departamento.getPresupuesto() + "');";
 
             insertUpdateDelete(sql);
         } catch (Exception ex){
@@ -57,10 +57,4 @@ public class DepartamentoDAO extends DAO{
             throw e;
         }
     }
-
-
-
-
-
-
 }

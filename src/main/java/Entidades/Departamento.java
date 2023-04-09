@@ -9,6 +9,11 @@ public class Departamento {
     public Departamento() {
     }
 
+    public Departamento(String nombre_departamento, float presupuesto) {
+        this.nombre_departamento = nombre_departamento;
+        this.presupuesto = presupuesto;
+    }
+
     public Departamento(int id, String nombre_departamento, float presupuesto) {
         this.id = id;
         this.nombre_departamento = nombre_departamento;

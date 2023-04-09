@@ -78,7 +78,30 @@ public class EmpleadoServicios {
                     System.out.println(e);
                 }
             }
+        } catch (Exception ex){
+            throw ex;
+        }
+    }
 
+    public Collection<Empleado> listEmployeesLogistics() throws Exception{
+        try {
+            Collection<Empleado> empleadosLogistica = empleadoDAO.listEmployeeLogistics();
+            return empleadosLogistica;
+        } catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    public void printListEmployeesLogistics()throws Exception{
+        try {
+            Collection<Empleado> empleadoLista = listEmployeesLogistics();
+            if (empleadoLista.isEmpty()){
+                throw new Exception("No hay Empleados registrados");
+            } else {
+                for (Empleado e:empleadoLista) {
+                    System.out.println(e);
+                }
+            }
         } catch (Exception ex){
             throw ex;
         }
