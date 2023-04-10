@@ -74,6 +74,7 @@ public class EmpleadoServicios {
             if (empleadoLista.isEmpty()){
                 throw new Exception("No hay Empleados registrados");
             } else {
+                System.out.println("\nLista de empleados.\n");
                 for (Empleado e:empleadoLista) {
                     System.out.println(e);
                 }
@@ -98,8 +99,9 @@ public class EmpleadoServicios {
             if (empleadoLista.isEmpty()){
                 throw new Exception("No hay Empleados registrados");
             } else {
+                System.out.println("Empleados del area de logistica.\n");
                 for (Empleado e:empleadoLista) {
-                    System.out.println(e);
+                    System.out.println(e.getNombre() + " " + e.getApellido());
                 }
             }
         } catch (Exception ex){
